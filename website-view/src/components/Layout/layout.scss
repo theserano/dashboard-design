@@ -1,0 +1,15 @@
+
+
+.layout{
+    display: flex;
+    max-width: 1536px;
+    height: 100vh;
+    
+    &__menu{
+        width: 16rem;
+        height: 100vh;
+    }
+    &__main{
+        flex: 1;
+    }
+}

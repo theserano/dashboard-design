@@ -1,0 +1,27 @@
+
+.menubar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+
+    @include md{
+        padding: 1rem;
+    }
+
+    &__top{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        &__logo{
+            display: flex;
+            gap: 12px;
+
+            h1{
+                font-weight: 600;
+                font-size: 2rem;
+            }
+        }
+    }
+}
