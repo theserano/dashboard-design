@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { menuProps } from "../../data/menu_data"
 import { motion } from "framer-motion";
+import "./menubar.scss";
 
 
 type Props = {
@@ -9,17 +10,21 @@ type Props = {
 
 const MenuList = ({ data }: Props) => {
   return (
-    <div>
+    <div className="menubar__top__lists">
       {data.map((item, key) => (
-        <Link key={key} to={item.link}>
-          <motion.div>
-            <item.icon />
-            {item.title}
+        <Link className="menubar__top__lists__item" key={key} to={item.link}>
+          <motion.div
+            className="menubar__top__lists__item__each"
+          >
+            <span>
+              <item.icon />
+            </span>
+            <p>{item.title}</p>
           </motion.div>
         </Link>
       ))}
     </div>
-  )
+  );
 }
 
 export default MenuList

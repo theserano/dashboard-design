@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             {path: "message", element: <Message />},
             {path: "settings", element: <Settings />},
             {path: "task", element: <Task />}
-        ]
+        ],
     }
 ]);
 

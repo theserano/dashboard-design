@@ -7,9 +7,12 @@
     
     &__menu{
         width: 16rem;
-        height: 100vh;
+        height: inherit;
+        position: fixed;
+        top: 0;
     }
     &__main{
         flex: 1;
+        margin-left: 16rem;
     }
 }
