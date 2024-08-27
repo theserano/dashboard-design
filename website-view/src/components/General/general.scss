@@ -1,0 +1,47 @@
+.date-picker-container {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+
+.rdpx {
+    --rdpx-primary-color: #4a6cf7;
+    --rdpx-background-color: transparent;
+    --rdpx-outline-color: #4a6cf7;
+    --rdpx-cell-height: 20px;
+    --rdpx-cell-width: 20px;
+}
+
+.rdp-caption_label{
+    font-size: 14px;
+}
+.rdp-day_button{
+    height: fit-content;
+}
+.rdpx-nav {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rdpx-day {
+    color: #999;
+    font-weight: 600;
+}
+
+.rdpx-day--selected {
+    background-color: #1e1e2f;
+    color: #4a6cf7;
+}
+
+.rdpx-day--today {
+    color: #4a6cf7;
+}
+
+.rdpx-day--outside {
+    visibility: hidden;
+}
+.rdp-month_caption{
+    justify-content: space-between;
+}

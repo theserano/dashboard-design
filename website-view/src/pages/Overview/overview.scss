@@ -1,0 +1,106 @@
+
+.overview{
+    display: grid;
+    grid-template-columns: 70% 30%;
+
+    &__main{
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 2rem;
+    
+            &__left {
+                display: flex;
+                flex-direction: column;
+                gap: .7rem;
+    
+                h1 {
+                    line-height: 0;
+                    margin: 0;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+    
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #54577A;
+                }
+            }
+    
+            &__right {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        &__charts{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+
+            &__progress{
+                border-radius: 10px;
+                padding: 1rem 1rem 0;
+                background-color: #141522;
+
+                &__h4{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #fff;
+                    margin: 0 0 1rem;
+                }
+                &__h1{
+                    font-size: 32px;
+                    font-weight: 600;
+                    color: #fff;
+                    margin: 0;
+                }
+
+                &__measure{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+
+                    &__div{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: center;
+
+                        h1{
+                            font-size: 20px;
+                            margin: 0;
+                            color: #fff;
+                        }
+                        p{
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: #54577A;
+                        }
+                    }
+                }
+            }
+
+            &__activity{
+                flex: 1;
+            }
+        }
+    }
+
+    &__side{
+        background-color: #F5F5F7;
+        padding: 2rem;
+        height: 100vh;
+
+        &__date{
+            width: 100%;
+        }
+    }
+
+
+}
