@@ -1,3 +1,4 @@
+import ActivityChart from '../../components/General/ActivityChart';
 import MyDatePicker from '../../components/General/DatePicker';
 import OverviewHeader from './OverviewHeader';
 import './overview.scss';
@@ -40,7 +41,9 @@ const Overview = ({}: Props) => {
             </div>
           </div>
           {/* activity chart */}
-          <div className="overview__main__charts__activity"></div>
+          <div className="overview__main__charts__activity">
+            <ActivityChart />
+          </div>
         </div>
       </div>
       <div className="overview__side">
