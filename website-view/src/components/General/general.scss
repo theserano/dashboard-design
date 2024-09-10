@@ -1,5 +1,5 @@
 .date-picker-container {
-    padding: 20px;
+    padding: 10px;
     background-color: #FFFFFF;
     border-radius: 12px;
     margin: 0 auto;
@@ -18,14 +18,14 @@
     font-size: 14px;
 }
 .rdp-day_button{
-    height: fit-content;
+    height: 30px !important;
 }
 .rdpx-nav {
     font-size: 18px;
     font-weight: 500;
 }
 
-.rdpx-day {
+.rdp-day {
     color: #999;
     font-weight: 600;
 }
@@ -35,7 +35,7 @@
     color: #4a6cf7;
 }
 
-.rdpx-day--today {
+.rdp-day--today {
     color: #4a6cf7;
 }
 
@@ -44,4 +44,7 @@
 }
 .rdp-month_caption{
     justify-content: space-between;
+}
+.rdp-months{
+    max-width: 100% !important;
 }

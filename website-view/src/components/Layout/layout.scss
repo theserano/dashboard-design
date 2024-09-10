@@ -1,19 +1,21 @@
 
-
 .layout{
     display: flex;
-    width: 100%;
+    max-width: 2156px;
     height: 100vh;
+    position: relative;
     
     &__menu{
-        width: 16rem;
+        max-width: 16rem;
         height: inherit;
-        position: fixed;
-        top: 0;
+        background-color: #fff;
+        position: absolute;
+        z-index: 999;
     }
     &__main{
         flex: 1;
-        margin-left: 16rem;
+        overflow-x: scroll;
+        padding-left: 5rem;
         width: 100%;
     }
 }

@@ -56,5 +56,4 @@ const ActivityChart = () => {
   }} ref={chartRef} />;
 };
 
-
 export default ActivityChart;
