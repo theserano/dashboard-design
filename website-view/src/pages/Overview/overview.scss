@@ -1,31 +1,58 @@
+@import '../../styles/variables';
 
 .overview{
     display: grid;
     grid-template-columns: 70% 30%;
 
+    @include md{
+        grid-template-columns: 100%;
+    }
+
     &__main{
+        padding: 1rem;
         &__header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 3rem 2rem;
-    
+
+            @include lg{
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            @include sm{
+                padding: 1rem 0rem;
+            }
+
             &__left {
                 display: flex;
                 flex-direction: column;
                 gap: .7rem;
+
+                @include sm{
+                    gap: .3rem;
+                    margin-bottom: -1rem;
+                }
     
                 h1 {
                     line-height: 0;
                     margin: 0;
                     font-size: 24px;
                     font-weight: 600;
+
+                    @include sm{
+                        font-size: 20px;
+                    }
                 }
     
                 p {
                     font-size: 16px;
                     font-weight: 400;
                     color: #54577A;
+
+                    @include sm{
+                        font-size: 12px;
+                    }
                 }
             }
     
@@ -34,6 +61,21 @@
                 justify-content: flex-end;
                 align-items: center;
                 gap: 2rem;
+
+                @include sm{
+                    gap: 1rem;
+                }
+
+                :first-child{
+                    @include sm{
+                        width: 20px;
+                    }
+                }
+                :last-child{
+                    @include sm{
+                        width: 35px;
+                    }
+                }
             }
         }
 
@@ -44,11 +86,24 @@
             gap: 2rem;
             padding: 1rem;
 
+            @include lg{
+                flex-direction: column;
+            }
+
             &__progress{
                 border-radius: 10px;
                 padding: 1rem 1rem 0;
                 background-color: #141522;
-                height: 245px;
+                height: 200px;
+
+                @include xl{
+                    max-height: 200px;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: fit-content;
+                    padding: 1rem !important;
+                }
 
                 &__h4{
                     font-size: 16px;
@@ -61,6 +116,10 @@
                     font-weight: 600;
                     color: #fff;
                     margin: 0;
+
+                    @include xl{
+                        font-size: 25px;
+                    }
                 }
 
                 &__measure{
@@ -94,6 +153,10 @@
                 padding: 1rem;
                 border-radius: 3px;
                 max-width: 1000px;
+
+                @include lg{
+                    width: 100%;
+                }
             }
         }
     }

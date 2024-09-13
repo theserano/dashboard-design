@@ -17,19 +17,21 @@ const Overview = ({}: Props) => {
         <div className="overview__main__charts">
           {/* running tasks */}
           <div className="overview__main__charts__progress">
-            <h4 className="overview__main__charts__progress__h4">
-              Running tasks
-            </h4>
-            <h1 className="overview__main__charts__progress__h1">65</h1>
+            <div>
+              <h4 className="overview__main__charts__progress__h4">
+                Running tasks
+              </h4>
+              <h1 className="overview__main__charts__progress__h1">65</h1>
+            </div>
             <div className="overview__main__charts__progress__measure">
               <span>
                 <CircularProgress
-                  size="100px"
+                  size="80px"
                   thickness="4px"
                   value={40}
                   color="#546FFF"
                 >
-                  <CircularProgressLabel color={`#fff`}>
+                  <CircularProgressLabel top={`40%`}  fontSize={`14px`} color={`#fff`}>
                     40%
                   </CircularProgressLabel>
                 </CircularProgress>

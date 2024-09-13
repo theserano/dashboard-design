@@ -15,7 +15,11 @@
     &__main{
         flex: 1;
         overflow-x: scroll;
-        padding-left: 5rem;
+        padding-left: 4.4rem;
         width: 100%;
+
+        @include md{
+            padding-left: 3.2rem;
+        }
     }
 }

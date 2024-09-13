@@ -3,19 +3,20 @@ import { Chart, ChartItem } from "chart.js/auto";
 
 const ActivityChart = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartInstanceRef = useRef<Chart | null>(null);
 
   useEffect(() => {
-    if (chartRef.current) {
-      const ctx = chartRef.current.getContext('2d');
-      
-      const myChart = new Chart(ctx as ChartItem, {
+    const ctx = chartRef.current?.getContext("2d");
+
+    if (ctx) {
+      // Initialize chart
+      chartInstanceRef.current = new Chart(ctx as ChartItem, {
         type: "line",
         data: {
           labels: ["S", "M", "T", "W", "T", "F", "S"],
           datasets: [
             {
               label: "Activity chart",
-
               pointBorderColor: "#546FFF",
               pointRadius: 7,
               pointBorderWidth: 3,
@@ -26,6 +27,7 @@ const ActivityChart = () => {
         },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: {
               display: false,
@@ -34,26 +36,44 @@ const ActivityChart = () => {
           scales: {
             y: {
               grid: {
-                display: false, // This removes the grid lines on the y-axis
+                display: false,
               },
             },
           },
         },
       });
 
-      // Cleanup the chart instance on component unmount
+      // Function to handle resizing
+      const handleResize = () => {
+        if (chartInstanceRef.current) {
+          chartInstanceRef.current.resize();
+        }
+      };
+
+      // Add resize event listener
+      window.addEventListener("resize", handleResize);
+
+      // Cleanup on component unmount
       return () => {
-        myChart.destroy();
+        if (chartInstanceRef.current) {
+          chartInstanceRef.current.destroy();
+        }
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, []);
 
-  return <canvas style={{
-    height: '90px',
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    padding: "1rem"
-  }} ref={chartRef} />;
+  return (
+    <canvas
+      style={{
+        height: "150px",
+        backgroundColor: "#fff",
+        borderRadius: "10px",
+        padding: "1rem",
+      }}
+      ref={chartRef}
+    />
+  );
 };
 
 export default ActivityChart;
