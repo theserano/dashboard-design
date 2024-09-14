@@ -1,10 +1,20 @@
 import ActivityChart from '../../components/General/ActivityChart';
+import ProgressCard from '../../components/General/Card';
 import MyDatePicker from '../../components/General/DatePicker';
 import OverviewHeader from './OverviewHeader';
 import './overview.scss';
 import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+import Task1 from "../../assets/task1.svg";
 
 type Props = {}
+
+const progressData = {
+  image: Task1,
+  title: "Creating Awesome Mobile Apps",
+  base: "UI /UX Designer",
+  progress: 90,
+  time: '1 Hour',
+};
 
 const Overview = ({}: Props) => {
   return (
@@ -31,7 +41,7 @@ const Overview = ({}: Props) => {
                   value={40}
                   color="#546FFF"
                 >
-                  <CircularProgressLabel top={`40%`}  fontSize={`14px`} color={`#fff`}>
+                  <CircularProgressLabel fontSize={`14px`} color={`#fff`}>
                     40%
                   </CircularProgressLabel>
                 </CircularProgress>
@@ -51,6 +61,42 @@ const Overview = ({}: Props) => {
       <div className="overview__side">
         <div className="overview__side__date">
           <MyDatePicker />
+        </div>
+        <div className="overview__side__task">
+          <h4 className="overview__side__task__h1">Task Today</h4>
+          <div className="overview__side__task__card">
+            <ProgressCard
+              time={progressData.time}
+              image={progressData.image}
+              base={progressData.base}
+              progress={progressData.progress}
+              title={progressData.title}
+            />
+          </div>
+          <hr
+            style={{ margin: "auto", width: "90%", borderColor: "#F5F5F7" }}
+          />
+          <div className="overview__side__list">
+            <div className="overview__side__list__top">
+              <h3>Detail Task</h3>
+              <p>UI/UX Designer</p>
+            </div>
+            <div className="overview__side__list__middle">
+              <div className="overview__side__list__middle__each">
+                <div>1</div>
+                <p>Understanding the tools in Figma</p>
+              </div>
+              <div className="overview__side__list__middle__each">
+                <div>2</div>
+                <p>Understand the basics of making designs</p>
+              </div>
+              <div className="overview__side__list__middle__each">
+                <div>3</div>
+                <p>Design a mobile application with figma</p>
+              </div>
+            </div>
+            <button className="overview__side__list__bottom">Go To Detail</button>
+          </div>
         </div>
       </div>
     </div>
