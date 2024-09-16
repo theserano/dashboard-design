@@ -10,11 +10,15 @@
 
     &__main{
         padding: 1rem;
+
+        @include sm{
+            padding: .5rem;
+        }
         &__header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 3rem 2rem;
+            padding: 3rem 1rem;
 
             @include lg{
                 padding: 1rem;
@@ -172,6 +176,11 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 2rem;
+        height: 100vh;
+
+        @include xxl{
+            height: 100%;
+        }
 
         &__date{
             width: 100%;

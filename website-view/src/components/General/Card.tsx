@@ -3,11 +3,12 @@ import {
   RangeSliderTrack,
   RangeSliderFilledTrack,
   RangeSliderThumb,
-  Box,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { CiClock2 } from "react-icons/ci";
 import student from "../../assets/Student.svg";
+import { PiNotepadLight } from "react-icons/pi";
+import Star from "../../assets/Star.svg";
 
 type Props = {
   image: string;
@@ -15,14 +16,27 @@ type Props = {
   base: string;
   progress: number;
   time: string;
+  width?: string;
+  padding?: string;
+  background?: string;
+  boxShadow?: string;
 };
 
-const ProgressCard = ({ image, title, base, progress, time }: Props) => {
+export type UserProps = {
+  image: string;
+  name: string;
+  title: string;
+  followed: boolean;
+  task: number;
+  review: string;
+}
+
+const ProgressCard = ({ image, title, base, progress, time, width, padding, background, boxShadow }: Props) => {
   const [progressValue, setProgressValue] = useState([0, progress]);
   
 
   return (
-    <div className="card">
+    <div className="card" style={{maxWidth: width && width, backgroundColor: background && background, padding: padding && padding, boxShadow: boxShadow && boxShadow}}>
       <img src={image} alt="image" />
       <div className="card__bottom">
         <div className="card__bottom__top">
@@ -62,5 +76,40 @@ const ProgressCard = ({ image, title, base, progress, time }: Props) => {
     </div>
   );
 };
+
+
+export const UserCard = ({ image, title, name, followed, task, review }: UserProps) => {
+  return (
+    <div className="userCard">
+      <div className="userCard__top">
+        <div className="userCard__top__left">
+          <img src={image} alt="" className="userCard__top__left__img" />
+          <div className="userCard__top__left__text">
+            <h4>{name}</h4>
+            <h5>{title}</h5>
+          </div>
+        </div>
+        <div className="userCard__top__right">
+          {followed ? (
+            <p className="userCard__top__right__followed">Followed</p>
+          ) : (
+            <p className="userCard__top__right__follow">+Follow</p>
+          )}
+        </div>
+      </div>
+      <div className="userCard__bottom">
+        <div className="userCard__bottom__left">
+          <PiNotepadLight />
+          <p>{task} Tasks</p>
+        </div>
+        <div className="userCard__bottom__right">
+          <img src={Star} alt="star" />
+          <p>{review}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 export default ProgressCard;

@@ -1,10 +1,12 @@
 import ActivityChart from '../../components/General/ActivityChart';
-import ProgressCard from '../../components/General/Card';
+import ProgressCard, { UserCard } from '../../components/General/Card';
 import MyDatePicker from '../../components/General/DatePicker';
 import OverviewHeader from './OverviewHeader';
 import './overview.scss';
 import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
 import Task1 from "../../assets/task1.svg";
+import { monthlyMentorsData, upcomingTaskData } from '../../data/data';
+import Carousel from '../../components/General/Carousel';
 
 type Props = {}
 
@@ -19,6 +21,7 @@ const progressData = {
 const Overview = ({}: Props) => {
   return (
     <div className="overview">
+      {/* main */}
       <div className="overview__main">
         {/* header */}
         <OverviewHeader />
@@ -57,7 +60,51 @@ const Overview = ({}: Props) => {
             <ActivityChart />
           </div>
         </div>
+
+        {/* monthly mentors */}
+        <div className="overview__main__mentor">
+          <Carousel
+            title="Monthly Mentors"
+            cards={monthlyMentorsData.map((item, key) => {
+              return (
+                <UserCard
+                  name={item.name}
+                  title={item.title}
+                  followed={item.followed}
+                  image={item.image}
+                  review={item.review}
+                  task={item.task}
+                  key={key}
+                />
+              );
+            })}
+          />
+        </div>
+
+        {/* upcoming listeners */}
+        <div className='overview__main__upcoming'>
+          <Carousel 
+            title='Upcoming Tasks'
+            cards={upcomingTaskData.map((item, key) => {
+              return (
+                <ProgressCard
+                  image={item.image}
+                  base={item.base}
+                  progress={item.progress}
+                  time={item.time}
+                  title={item.title}
+                  background="#fff"
+                  padding="1rem"
+                  boxShadow="-2px 2px 15px -3px rgba(0,0,0,0.1)"
+                  key={key}
+                />
+              );
+            })}
+          />
+        </div>
       </div>
+
+      {/* side */}
       <div className="overview__side">
         <div className="overview__side__date">
           <MyDatePicker />
@@ -71,6 +118,7 @@ const Overview = ({}: Props) => {
               base={progressData.base}
               progress={progressData.progress}
               title={progressData.title}
+              width='100%'
             />
           </div>
           <hr
@@ -95,7 +143,9 @@ const Overview = ({}: Props) => {
                 <p>Design a mobile application with figma</p>
               </div>
             </div>
-            <button className="overview__side__list__bottom">Go To Detail</button>
+            <button className="overview__side__list__bottom">
+              Go To Detail
+            </button>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const ActivityChart = () => {
             {
               label: "Activity chart",
               pointBorderColor: "#546FFF",
-              pointRadius: 7,
+              pointRadius: 5,
               pointBorderWidth: 3,
               borderColor: "#141522",
               data: [5, 9, 3, 1, 6, 5, 2],
