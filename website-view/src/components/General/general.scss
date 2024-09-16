@@ -86,7 +86,7 @@
                 @include lg{
                     font-size: 14px;
                 }
-                @include sm{
+                @include md{
                     font-size: 12px;
                 }
             }
@@ -94,7 +94,7 @@
                 margin: 0;
                 font-size: 12px;
                 font-weight: 300;
-                @include sm{
+                @include md{
                     font-size: 10px;
                 }
             }
@@ -110,7 +110,7 @@
                     font-weight: 400;
                     font-weight: 500;
 
-                    @include sm{
+                    @include md{
                         font-size: 12px;
                     }
                 }
@@ -118,7 +118,7 @@
                     font-size: 16px;
                     color: #546FFF;
 
-                    @include sm{
+                    @include md{
                         font-size: 12px;
                     }
                 }
@@ -135,13 +135,13 @@
                 gap: .3rem;
 
                 p{
-                    @include sm{
+                    @include md{
                         font-size: 12px;
                     }
                 }
             }
             img{
-                @include sm{
+                @include md{
                     width: 70px;
                 }
             }

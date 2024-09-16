@@ -5,6 +5,7 @@ import Slider from "react-slick";
 
 type Props = {
     title: string,
+    slides?: number
     cards: ReactNode
 }
 
@@ -30,13 +31,16 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-const Carousel = ({ title, cards }: Props) => {
+const Carousel = ({ title, cards, slides }: Props) => {
+
+  console.log(slides);
+  
 
     var settings = {
       infinite: false,
       speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 2,
+      slidesToShow: slides ? slides : 2,
+      slidesToScroll: slides ? slides : 2,
       initialSlide: 0,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,

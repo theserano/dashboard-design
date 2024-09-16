@@ -24,7 +24,14 @@ const Overview = ({}: Props) => {
       {/* main */}
       <div className="overview__main">
         {/* header */}
-        <OverviewHeader />
+        <OverviewHeader
+          title={
+            <>
+              <h1>Hi, Zoe Serano</h1>
+              <p>Let's finish your task today!</p>
+            </>
+          }
+        />
 
         {/* charts */}
         <div className="overview__main__charts">
@@ -82,9 +89,9 @@ const Overview = ({}: Props) => {
         </div>
 
         {/* upcoming listeners */}
-        <div className='overview__main__upcoming'>
-          <Carousel 
-            title='Upcoming Tasks'
+        <div className="overview__main__upcoming">
+          <Carousel
+            title="Upcoming Tasks"
             cards={upcomingTaskData.map((item, key) => {
               return (
                 <ProgressCard
@@ -118,7 +125,7 @@ const Overview = ({}: Props) => {
               base={progressData.base}
               progress={progressData.progress}
               title={progressData.title}
-              width='100%'
+              width="100%"
             />
           </div>
           <hr

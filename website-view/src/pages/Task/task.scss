@@ -1,0 +1,42 @@
+.task{
+
+    @include sm{
+        padding: .5rem;
+    }
+
+    &__filters{
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem;
+
+        @include sm{
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &__search{
+            max-width: 500px;
+            flex: 1;
+        }
+
+        &__buttons{
+            display: flex;
+            gap: 2rem;
+
+            @include md{
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and  (max-width: 375px){
+    .task__filters{
+        gap: 1rem;
+    }
+    .task__filters__buttons{
+        flex-direction: column;
+    }
+}
