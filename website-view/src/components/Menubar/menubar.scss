@@ -9,6 +9,10 @@
     transition: all ease-in-out 1s;
     box-shadow: 5px 0px 15px -3px rgba(0,0,0,0.1);
 
+    :where(*, *::before, *::after) {
+        word-wrap: normal;
+    }
+
     @include md{
         padding: 1rem;
     }

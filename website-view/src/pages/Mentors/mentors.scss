@@ -1,0 +1,59 @@
+
+.mentors{
+    @include sm{
+        padding: .5rem;
+    }
+
+    &__filters{
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1rem;
+
+        @include sm{
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &__search{
+            max-width: 500px;
+            flex: 1;
+        }
+
+        &__buttons{
+            display: flex;
+            gap: 2rem;
+
+            @include md{
+                gap: 1rem;
+            }
+        }
+    }
+
+    &__heading{
+        font-size: 24px;
+        font-weight: 600;
+        color: #141522;
+        padding: 1rem;
+
+        @include sm{
+            padding: 1rem 0;
+            font-size: 20px;
+        }
+    }
+
+    &__group{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1rem;
+
+        @include lg{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include sm{
+            grid-template-columns: 100%;
+        }
+    }
+}

@@ -30,6 +30,15 @@ export type UserProps = {
   task: number;
   review: string;
 }
+export type MentorProps = {
+  image: string;
+  name: string;
+  title: string;
+  followed: boolean;
+  task: number;
+  review: string;
+  text: string;
+}
 
 const ProgressCard = ({ image, title, base, progress, time, width, padding, background, boxShadow }: Props) => {
   const [progressValue, setProgressValue] = useState([0, progress]);
@@ -105,6 +114,40 @@ export const UserCard = ({ image, title, name, followed, task, review }: UserPro
         <div className="userCard__bottom__right">
           <img src={Star} alt="star" />
           <p>{review}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export const MentorCard = ({ image, title, name, followed, task, review, text }: MentorProps) => {
+  return (
+    <div className="userCard">
+      <div className="userCard__top">
+        <div className="userCard__top__left">
+          <img src={image} alt="" className="userCard__top__left__img" />
+          <div className="userCard__top__left__text">
+            <h4 className="mentor__h1">{name}</h4>
+            <h5 className="mentor__h5">{title}</h5>
+          </div>
+        </div>
+        <div className="userCard__top__right">
+          {followed ? (
+            <p className="userCard__top__right__followed">Followed</p>
+          ) : (
+            <p className="userCard__top__right__follow">+Follow</p>
+          )}
+        </div>
+      </div>
+      <div className="userCard__middle">{text}</div>
+      <div className="userCard__bottom">
+        <div className="userCard__bottom__left">
+          <PiNotepadLight />
+          <p className="mentor__taskP">{task} Tasks</p>
+        </div>
+        <div className="userCard__bottom__right">
+          <img src={Star} alt="star" />
+          <p className="mentor__taskP" >{review}</p>
         </div>
       </div>
     </div>

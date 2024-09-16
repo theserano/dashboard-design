@@ -179,7 +179,7 @@
             gap: .5rem;
 
             img{
-                @include sm{
+                @include md{
                     width: 30px;
                 }
             }
@@ -189,7 +189,7 @@
                 font-weight: 600;
                 color: #141522;
 
-                @include sm{
+                @include md{
                     font-size: 14px;
                 }
             }
@@ -197,7 +197,7 @@
                 font-size: 12px;
                 color: #54577A;
 
-                @include sm{
+                @include md{
                     font-size: 10px;
                 }
             }
@@ -208,17 +208,26 @@
                 font-size: 14px;
                 color: #546FFF;
                 font-weight: 300;
-                @include sm{
+                @include lg{
                     font-size: 12px;
                 }
             }
             &__followed{
                 font-size: 14px;
                 color: #9C9CA4;
-                @include sm{
+                @include lg{
                     font-size: 12px;
                 }
             }
+        }
+    }
+
+    &__middle{
+        color: #8E92BC;
+        font-size: 14px;
+
+        @include lg{
+            font-size: 12px;
         }
     }
 
@@ -237,8 +246,11 @@
                 font-size: 14px;
                 font-weight: 600;
 
-                @include sm{
+                @include lg{
                     font-size: 12px;
+                }
+                @include sm{
+                    font-size: 10px;
                 }
             }
 
@@ -252,18 +264,28 @@
             display: flex;
             gap: .3rem;
 
+            img{
+                @include sm{
+                    width: 12px;
+                }
+            }
+
             p{
                 font-size: 14px;
                 color: #141522;
                 font-weight: 600;
 
-                @include sm{
+                @include lg{
                     font-size: 12px;
+                }
+                @include sm{
+                    font-size: 10px;
                 }
             }
         }
     }
 }
+
 
 .slick-track{
     display: flex;
