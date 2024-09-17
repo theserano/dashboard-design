@@ -4,7 +4,6 @@ import Layout from "./Layout.tsx";
 
 
 const Mentors = lazy(() => import("../../pages/Mentors/Mentors.tsx"));
-const Message = lazy(() => import("../../pages/Message/Message.tsx"));
 const Overview = lazy(() => import("../../pages/Overview/Overview.tsx"));
 const Settings = lazy(() => import("../../pages/Settings/Settings.tsx"));
 const Task = lazy(() => import("../../pages/Task/Task.tsx"));
@@ -16,7 +15,6 @@ const router = createBrowserRouter([
         children: [
             {path: "/", element: <Overview />},
             {path: "mentors", element: <Mentors />},
-            {path: "message", element: <Message />},
             {path: "settings", element: <Settings />},
             {path: "task", element: <Task />}
         ],

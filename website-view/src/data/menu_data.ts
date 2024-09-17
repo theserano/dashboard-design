@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 import { HiOutlineViewGrid, HiOutlineBookOpen, HiOutlineUserGroup } from "react-icons/hi";
-import { LuMessageSquareDashed, LuSettings } from "react-icons/lu";
+import { LuSettings } from "react-icons/lu";
 
 export interface menuProps {
     title: string,
@@ -23,11 +23,6 @@ export const menuItems: menuProps[] = [
         title: "Mentors",
         icon: HiOutlineUserGroup,
         link: "/mentors"
-    },
-    {
-        title: "Message",
-        icon: LuMessageSquareDashed,
-        link: "/message"
     },
     {
         title: "Settings",
