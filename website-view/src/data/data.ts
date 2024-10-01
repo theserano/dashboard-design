@@ -12,8 +12,6 @@ import m1 from "../assets/mentors/m1.svg";
 import m2 from "../assets/mentors/m2.svg";
 import m3 from "../assets/mentors/m3.svg";
 import m4 from "../assets/mentors/m4.svg";
-import m5 from "../assets/mentors/m5.svg";
-import m6 from "../assets/mentors/m6.svg";
 
 
 export const monthlyMentorsData: UserProps[] = [

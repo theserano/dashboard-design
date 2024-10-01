@@ -8,18 +8,25 @@ const Overview = lazy(() => import("../../pages/Overview/Overview.tsx"));
 const Settings = lazy(() => import("../../pages/Settings/Settings.tsx"));
 const Task = lazy(() => import("../../pages/Task/Task.tsx"));
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
     {
-        path: "/",
-        element: <Layout><Outlet/></Layout>,
-        children: [
-            {path: "/", element: <Overview />},
-            {path: "mentors", element: <Mentors />},
-            {path: "settings", element: <Settings />},
-            {path: "task", element: <Task />}
-        ],
-    }
-]);
+      path: "/",
+      element: (
+        <Layout>
+          <Outlet />
+        </Layout>
+      ),
+      children: [
+        { path: "/", element: <Overview /> },
+        { path: "mentors", element: <Mentors /> },
+        { path: "settings", element: <Settings /> },
+        { path: "task", element: <Task /> },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL }
+);
 
 
 const Router = () => {
