@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_view/data/carousel_data.dart';
 import 'package:mobile_view/data/chart_data.dart';
 import 'package:mobile_view/ui/components/activity_chart.dart';
+import 'package:mobile_view/ui/components/carousel.dart';
+import 'package:mobile_view/ui/screens/mentor_card.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class Overview extends StatefulWidget {
@@ -91,10 +94,21 @@ class _OverviewState extends State<Overview> {
                       fontWeight: FontWeight.bold
                     ),),
                     const SizedBox(height: 20,),
-                    ActivityChart(points: activityPoints)
+                    ActivityChart(points: activityPoints),
                   ],
                 ),
               ),
+              const SizedBox(height: 20,),
+              MyCarousel(
+                  items: monthlyData
+                      .map((item) => MentorCard(
+                          image: item.image,
+                          name: item.name,
+                          title: item.title,
+                          followed: item.followed,
+                          review: item.review,
+                          task: item.task))
+                      .toList(), text: 'Monthly Mentors', height: 130,),
             ],
           ),
         ),
