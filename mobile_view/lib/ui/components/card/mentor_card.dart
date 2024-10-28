@@ -23,14 +23,6 @@ class _MentorCardState extends State<MentorCard> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey.withOpacity(0.2))
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.grey.withOpacity(0.5),
-        //     spreadRadius: 1,
-        //     blurRadius: 1,
-        //     offset: const Offset(1, 1),
-        //   ),
-        // ],
       ),
       child: SingleChildScrollView(
         child: Column(
