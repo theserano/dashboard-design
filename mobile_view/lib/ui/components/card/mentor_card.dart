@@ -33,7 +33,7 @@ class _MentorCardState extends State<MentorCard> {
               children: [
                 Row(
                   children: [
-                    Image.asset(widget.image),
+                    Image.asset(widget.image, width: 40, height: 40,),
                     const SizedBox(width: 10,),
                     Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text(widget.name, style: const TextStyle(fontSize: 16, color: Color(0xFF141522)),),

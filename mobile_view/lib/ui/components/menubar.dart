@@ -47,12 +47,6 @@ class _MyMenuBarState extends State<MyMenuBar> {
                 const EdgeInsets.only(top: 70, bottom: 10, left: 10, right: 10),
             decoration: const BoxDecoration(
               color: Color(0xFFFFFFFF),
-              border: Border(
-                bottom: BorderSide(
-                  color: Color(0xFFF5F5F7),
-                  width: 1.0,
-                ),
-              ),
             ),
             child: Column(
               children: [
@@ -160,6 +154,7 @@ class _MyMenuBarState extends State<MyMenuBar> {
           onTap: () {
             setState(() {
               currentIndex = item.index;
+              showMenu = false;
             });
           },
           child: AnimatedContainer(

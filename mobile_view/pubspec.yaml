@@ -42,6 +42,7 @@ dependencies:
   fl_chart: ^0.69.0
   carousel_slider: ^5.0.0
   syncfusion_flutter_sliders: ^27.1.56
+  table_calendar: ^3.1.2
 
 dev_dependencies:
   flutter_test:

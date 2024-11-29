@@ -66,7 +66,7 @@ class _MyCarouselState extends State<MyCarousel> {
           options: CarouselOptions(
             height: widget.height,
             autoPlay: false,
-            viewportFraction: 0.95,
+            viewportFraction: 1,
             enlargeCenterPage: true,
             onPageChanged: (index, reason) {
               setState(() {

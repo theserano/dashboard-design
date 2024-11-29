@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_view/data/carousel_data.dart';
 import 'package:mobile_view/data/chart_data.dart';
 import 'package:mobile_view/ui/components/activity_chart.dart';
+import 'package:mobile_view/ui/components/calendar.dart';
 import 'package:mobile_view/ui/components/card/task_card.dart';
 import 'package:mobile_view/ui/components/carousel.dart';
 import 'package:mobile_view/ui/components/card/mentor_card.dart';
@@ -21,6 +22,14 @@ class _OverviewState extends State<Overview> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),
+          decoration: const BoxDecoration(
+            border: Border(
+                top: BorderSide(
+                  color: Color(0xFFF5F5F7),
+                  width: 1.0,
+                ),
+              ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -154,7 +163,10 @@ class _OverviewState extends State<Overview> {
                       time: item.time,
                       title: item.title)).toList(),
                   text: 'Upcoming Task',
-                  height: 350)
+                  height: 350),
+              const SizedBox(height: 20,),
+              const MyCalendar(),
+              const SizedBox(height: 30,),
             ],
           ),
         ),
